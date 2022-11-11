@@ -8,11 +8,13 @@ public class esercizio2 {
         Boolean b2=false;
         double somma;
         boolean orP;
-
+        
+        //di seguito sarà fatta la somma delle varibili e nel caso di valori "carattere" verrà sommata la codifica ASCII
         somma= val1+val2+val3;
         somma/=3;
 
         orP=b1||b2;
+        
         if(orP==true){
             System.out.println(orP);
             System.out.println("EVVIVA");
@@ -20,5 +22,5 @@ public class esercizio2 {
 
         System.out.println(somma);
 
-    }
+    }//chiusura del main
 }
