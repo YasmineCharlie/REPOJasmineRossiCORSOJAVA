@@ -12,3 +12,4 @@ il codice Java che useremo nel codice.
 14/11/22 ore 18:00 --> Aggiunto esercizio con cicli e if
 
 15/11/22 ore 12:50 --> Aggiunto esercizio con array, cicli e if
+15/11/22 ore 14:50 --> Aggiunto esercizio con arrayList, cicli e if
