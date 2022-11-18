@@ -13,3 +13,6 @@ il codice Java che useremo nel codice.
 
 15/11/22 ore 12:50 --> Aggiunto esercizio con array, cicli e if
 15/11/22 ore 14:50 --> Aggiunto esercizio con arrayList, cicli e if
+
+18/11/22 ore 18:00 --> Aggiunto esercizio EsercizioQUIZZONE in Kotlin
+
