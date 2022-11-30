@@ -16,3 +16,5 @@ il codice Java che useremo nel codice.
 
 18/11/22 ore 18:00 --> Aggiunto esercizio EsercizioQUIZZONE in Kotlin
 
+30/11/22 ore 21:00 --> Aggiunto esercizio APPMC, Main dell'App di metà corso strutturata con Giulia
+
