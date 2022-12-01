@@ -1,0 +1,44 @@
+fun main(args: Array<String>) {
+    var back=Backup()
+    back.cambia_pass()
+}
+
+class Backup(){
+    private var backup:String="" //password che mi passa Giulia
+
+    var nome:String="Bobby" //nome che deve inserire l'utente quando risponde alla domanda nel Login (RISPOSTA ALLA DOMANDA DI SICUREZZA)
+    var esci:Boolean=true
+
+    fun cambia_pass(){
+        var i:Int=0
+        var j:Int=3
+        var nomesicurezza:String=""
+
+        while(esci==true){
+            if(i==3){
+                println("IMPOSSIBILE CAMBIARE PASSWORD!!!")
+                esci=false
+            }
+            else
+            {
+                println("Per recuperare la password devi rispondere alla seguente domanda: ")
+                println("Qual è il nome del tuo cane? ")
+                nomesicurezza= readLine().toString()
+                if(nomesicurezza==nome){
+                    println("Puoi cambiare password!")
+                    println("Qual è la nuova password?")
+                    backup= readLine().toString()
+                    println("Nuova Password salvata!")
+                    //println(backup)
+                    esci=false
+                }
+                else {
+                    j--
+                    println("Hai sbagliato! Hai ancora ${j} tentativi")
+                }
+            }
+            i++
+        }
+
+    }
+}
