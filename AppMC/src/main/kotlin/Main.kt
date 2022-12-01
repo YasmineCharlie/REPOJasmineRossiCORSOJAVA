@@ -8,7 +8,7 @@ fun controllonum(scelta: String?): Boolean {
     //controllo che la stringa passata sia effettivamente un numero
     for (i in scelta)
     {
-        if (i < '0' || i > '9')
+        if (i < '0'||i > '9')
         {
             return false
         }
@@ -19,69 +19,67 @@ fun controllonum(scelta: String?): Boolean {
 fun main(args: Array<String>)
 {
     //inizializzazione e valorizazione delle varibili
-    var ciclomenu = false //variabile che mi permette di fermare il ciclo del menu
-    var cicloAgg = false //variabile che mi permette di fermare il ciclo dell'aggiungi
+    var ciclomenu = false //variabile che permette di fermare il ciclo del menu
+    var cicloAgg = false //variabile che permette di fermare il ciclo dell'aggiungi
     var task:ArrayList<String> = ArrayList() //arraylist delle task
-    var cicloMod=false
-    var cicloEl=false
-    var cicloEsci=false
-    var cicloTaskCompl=false
+    var cicloMod=false //variabile che permette di fermare il ciclo della modifica
+    var cicloEl=false //variabile che permette di fermare il ciclo dell'elimina
+    var cicloEsci=false //variabile che permette di fermare il ciclo dell'esci
+    var cicloTaskCompl=false //variabile che permette di fermare il ciclo delle task completate
 
     while(ciclomenu==false)
     {
-        /*
-        println("BENVENUTO!")
-        println("COSA VUOI FARE")
-        println("A: CREARE TASK ")
-        println("B: MODFICARE TASK")
-        println("C: STAMPARE TASK ")
-        println("D: ELIMINARE TASK")
-        */
 
         println("BENVENUTO! \nCOSA VUOI FARE? \nA: CREARE TASK \nB: MODIFICARE TASK \nC: STAMPARE TASK \nD: ELIMINARE TASK \nE: COMPLETA TASK \nF: ESCI")
 
-        var scelta:String=""
-        scelta= readln().toString()
+        var scelta:String="" //variabile che permette di salvare la scelta dell'utente
+        scelta= readLine().toString()
 
         if(scelta.equals("A")||scelta.equals("a")) // creare una task
         {
             //nel caso in cui sceglie CREA
             println("Cosa vuoi aggiungere?")
             var inserimento:String=""
-            inserimento= readln().toString()
-            task.add(inserimento)
+            inserimento= readLine().toString()
+
+            task.add(inserimento) //aggiunge una task
 
             while (cicloAgg==false)
             {
                 println("vuoi inserire altro? [S/N]")
-                scelta = readln().toString()
+                scelta = readLine().toString()
+                //se l'utente vuole inserire una nuova task
                 if (scelta.equals("S")||scelta.equals("s"))
                 {
                     println("Inserisci di nuovo")
-                    inserimento= readln().toString()
-                    task.add(inserimento)
+                    inserimento= readLine().toString()
+                    task.add(inserimento) //aggiungo una nuova task
                 }
-                else if(scelta.equals("N")||scelta.equals("n")) {
+                else if(scelta.equals("N")||scelta.equals("n")) { //altrimenti vuole fruire di un altro comando
                          cicloAgg=true
                 }
                 else
                 {
+                    //il carattere digitato non è previsto
                     println("Comando non valido!")
                 }
             }
-        }
+            cicloAgg=false
+        }//chiusura if scelta CREA
         else if(scelta.equals("B")||scelta.equals("b")) //modificare una task
         {
+            //il seguente permette di controllare se non ci sono task
             if (task.isNullOrEmpty()) {
                 println("Non ci sono Task!")
-            }
+            }//chiusura if
             else {
                 println("Le tue task sono:")
                 for(i in 0 until  task.size)
                 {
                     println(i.toString() + " " + task.get(i))
                 }
-                while(cicloMod==false){
+                while(cicloMod==false)
+                {
                     println("Cosa vuoi modificare?")
                     var sceltaModifica:String=""
                     sceltaModifica= readLine().toString()
@@ -95,24 +93,26 @@ fun main(args: Array<String>)
 
                         println("Con cosa vuoi modifcare la tua task?")
                         var modificaEffettuata: String=""
-                        modificaEffettuata= readln().toString()
+                        modificaEffettuata= readLine().toString()
                         task.set(num, modificaEffettuata)
+
                         //aggiornamento task
-                        println("Ore le tue task sono:")
+                        println("Ora le tue task sono:")
                         for (i in 0 until task.size)
                         {
-                            //stampa la lista
+                            //stampa delle task
                             println(i.toString() + " " + task.get(i))
-                        }
+                        }//chiusura for
                         cicloMod=true
-                    }
+                    }//chiusura if
                     else
                     {
                         println("Non hai selezionato un numero!")
                     }
                 }
             }
-        }
+            cicloMod=false
+        }//chiusura if scelta MODIFICA
         else if(scelta.equals("C")||scelta.equals("c")) //stampare una task
         {
             //stampa la lista delle task
@@ -122,7 +122,7 @@ fun main(args: Array<String>)
                 //stampa la lista
                 println(i.toString() + " " + task.get(i))
             }
-        }
+        }//chiusura if scelta STAMPA
         else if(scelta.equals("D")||scelta.equals("d")) //eliminare una task
         {
             if (task.isNullOrEmpty()) {
@@ -132,7 +132,7 @@ fun main(args: Array<String>)
                 println("Quale task vuoi eliminare?")
                 for (i in 0 until task.size)
                 {
-                    //stampa la lista
+                    //stampa le task
                     println(i.toString() + " " + task.get(i))
                 }
 
@@ -141,7 +141,7 @@ fun main(args: Array<String>)
                     //effettiva eliminazione
                     println("Cosa vuoi eliminare?")
                     var sceltaElimina:String=""
-                    sceltaElimina = readln().toString()
+                    sceltaElimina = readLine().toString()
                     var num:Int=0
                     if (controllonum(sceltaElimina))
                     {
@@ -154,15 +154,16 @@ fun main(args: Array<String>)
                             println(i.toString() + " " + task.get(i))
                         }
                         cicloEl=true
-                    }
+                    }//chiusura if
                     else
                     {
                         println("Non hai selezionato un numero!")
                     }
-                }
-            }
+                }//chiusura while controllo
 
-        }
+            }
+            cicloEl=false
+        }//chiusura if scelta ELIMINA
         else if(scelta.equals("E")||scelta.equals("e")) //completa una task
         {
             if (task.isNullOrEmpty())
@@ -199,24 +200,25 @@ fun main(args: Array<String>)
                             {
                                 println(i.toString() + " " + task.get(i))
                             }
-                        }
+                        }//chiusura for
                         cicloTaskCompl=true
-                    } else {
+                    }//chiusura if
+                    else
+                    {
                         println("Non hai selezionato un numero!")
                     }
-                }
-
+                }//chiusura while controllo taskcompl
             }
-        }
+            cicloTaskCompl=false
+        }//chiusura if scelta COMPLETA
         else if(scelta.equals("F")||scelta.equals("f")) //esci
         {
             //parte di uscita con conferma
             while(cicloEsci==false)
             {
-
                 println("Sei sicuro di voler uscire [S/N]")
                 var choice:String=""
-                choice= readln().toString()
+                choice= readLine().toString()
                 if(choice.equals("S")||choice.equals("s"))
                 {
                     println("ARRIVEDERCI")
@@ -232,16 +234,14 @@ fun main(args: Array<String>)
                     println("Scelta non valida")
                     cicloEsci=false
                 }
-            }
+            }//chiusura while controllo esci
             cicloEsci=false
-        }
+        }//chiusura if scelta ESCI
         else
         {
             println("Comando non valido!")
         }
 
-
     }
-
 
 }
