@@ -19,4 +19,5 @@ il codice Java che useremo nel codice.
 30/11/22 ore 21:00 --> Aggiunto esercizio APPMC, Main dell'App di metà corso strutturata con Giulia
 
 01/11/22 ore 13:00 --> Modifica main APPMC, Main dell'App di metà corso strutturata con Giulia 
+01/11/22 ore 18:00 --> Modifiche main APPMC 
 
